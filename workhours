@@ -9,6 +9,7 @@ people = [
     [ "Europe/Rome", "lawrence" ],
     [ "Atlantic/Madeira", "steven" ],
     [ "Europe/Rome", "alekos", 10, 18 ],
+    [ "UTC", "apoelstra", 15, 24 ],
 ]
 
 c_red = '\033[31m'
@@ -44,8 +45,25 @@ def work_range(tz, start_hour, end_hour):
     tomorrow = now.hour > end_hour
     start = pendulum.tomorrow(tz) if tomorrow else pendulum.today(tz)
     end   = pendulum.tomorrow(tz) if tomorrow else pendulum.today(tz)
+    add_start_hour = False
+    add_end_hour = False
+
+    if start_hour == 24:
+        start_hour = 23
+        add_start_hour = True
+
+    if end_hour == 24:
+        end_hour = 23
+        add_end_hour = True
+
     start = start.set(hour=start_hour, minute=0)
     end = end.set(hour=end_hour, minute=0)
+
+    if add_start_hour:
+        start = start.add(hours=1)
+
+    if add_end_hour:
+        end = end.add(hours=1)
 
     return (start, end)
 
