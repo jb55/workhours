@@ -5,7 +5,7 @@ track work times of colleagues in different timezones
 
 ## dependencies
 
-  - pendulum
+  - pendulum (pip)
 
 ## example
 
