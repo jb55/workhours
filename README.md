@@ -1,7 +1,7 @@
 
-# worktimes
+# workhours
 
-track work times of colleagues in different timezones
+track work hours of colleagues in different timezones
 
 ## dependencies
 
