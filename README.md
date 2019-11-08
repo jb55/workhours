@@ -7,6 +7,21 @@ track work times of colleagues in different timezones
 
   - pendulum (pip)
 
+## customize
+
+Edit the people array in the script. Columns are `timezone`, `name`, `start hour`, `end hour`
+
+```python
+people = [
+    [ "Australia/Adelaide", "rusty" ],
+    [ "Europe/Zurich", "cdecker" ],
+    [ "Europe/Rome", "lawrence" ],
+    [ "Atlantic/Madeira", "steven" ],
+    [ "Europe/Rome", "alekos", 10, 18 ],
+]
+```
+
+
 ## example
 
 - `t` means tomorrow

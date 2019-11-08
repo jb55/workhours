@@ -8,7 +8,7 @@ people = [
     [ "Europe/Zurich", "cdecker" ],
     [ "Europe/Rome", "lawrence" ],
     [ "Atlantic/Madeira", "steven" ],
-    [ "Europe/Rome", "alekos", "10", "18" ],
+    [ "Europe/Rome", "alekos", 10, 18 ],
 ]
 
 c_red = '\033[31m'
@@ -55,8 +55,8 @@ def main():
     for person in people:
         tz       = pendulum.timezone(person[0])
         name     = person[1]
-        start_hour = int(person[2]) if len(person) > 2 else 9
-        end_hour   = int(person[3]) if len(person) > 3 else 17
+        start_hour = person[2] if len(person) > 2 else 9
+        end_hour   = person[3] if len(person) > 3 else 17
 
         (start, end) = work_range(tz, start_hour, end_hour)
 
