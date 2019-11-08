@@ -9,9 +9,11 @@ track work times of colleagues in different timezones
 
 ## example
 
-`t` means tomorrow, `lstart` and `lend` are their start and end times in your
-local time. a `t` in the local columns means *your* tomorrow. a `t` in the
-`start` and `end` columns is *their* tomorrow.
+- `t` means tomorrow
+- `lstart` their start of work in your local time
+- `lend` their end off work in your local time
+- `t` in the local columns means *your* tomorrow. 
+- `t` in the `start` and `end` columns is *their* tomorrow.
 
 The row will be red if the current row is outside of work hours.
 
