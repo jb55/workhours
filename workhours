@@ -50,21 +50,18 @@ def work_range(tz, start_hour, end_hour):
     add_end_hours = 0
 
     if start_hour > 23:
-        start_hour = 23
         add_start_hours = start_hour - 23
+        start_hour = 23
 
     if end_hour > 23:
+        add_end_hours = end_hour - 23
         end_hour = 23
-        add_end_hours = start_hour - 23
 
     start = start.set(hour=start_hour, minute=0)
     end = end.set(hour=end_hour, minute=0)
 
-    if add_start_hours > 0:
-        start = start.add(hours=add_start_hours)
-
-    if add_end_hours > 0:
-        end = end.add(hours=add_end_hours)
+    start = start.add(hours=add_start_hours)
+    end = end.add(hours=add_end_hours)
 
     return (start, end)
 
